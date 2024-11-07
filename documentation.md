@@ -74,3 +74,15 @@ root.render(<App />);
 5.  Add a port number in a constant
 
 6.  Pass connection string to the mongoose.connect object
+
+
+
+## Adding routes, controllers and models
+
+1. Create a folder inside server named as `routes` then add posts.js inside it
+
+2. Create a folder called `controllers` then add posts.js inside it
+
+3. Add a folder called `models` then add postBlog.js inside it
+
+4. Adding more routes and controllers then move to the client side
