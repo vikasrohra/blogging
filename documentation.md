@@ -86,3 +86,13 @@ root.render(<App />);
 3. Add a folder called `models` then add postBlog.js inside it
 
 4. Adding more routes and controllers then move to the client side
+
+
+
+## Material UI setup
+
+1. Go to the Material UI website and follow the installation steps
+
+
+
+## Added App Header
