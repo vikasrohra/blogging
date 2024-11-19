@@ -103,3 +103,7 @@ root.render(<App />);
 
 
 ### Added Feed Page
+
+
+### Configuring and using React Router
+- Install a package `react-router-dom`
