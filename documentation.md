@@ -89,10 +89,17 @@ root.render(<App />);
 
 
 
-## Material UI setup
+## Frontend Design
+
+
+### Material UI setup
 
 1. Go to the Material UI website and follow the installation steps
 
 
 
-## Added App Header
+### Added App Header
+
+
+
+### Added Feed Page

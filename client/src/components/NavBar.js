@@ -383,6 +383,8 @@ const NavBar = () => {
           </Toolbar>
         </Container>
       </AppBar>
+      {/* Extra toolbar is because appbar position is fixed and because of that below content will be behind the appbar, so to aviod that MUI has suggested to add an extra toolbar */}
+      <Toolbar />
 
       {/* Bottom navigation for mobile and tablet screens */}
       <AppBar
