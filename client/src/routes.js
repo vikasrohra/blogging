@@ -8,12 +8,12 @@ import Onboard from "./components/Onboard";
 export const appRouter = createBrowserRouter([
   {
     path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/",
     element: <Main />,
     children: [
-      {
-        path: "/",
-        element: <Home />,
-      },
       {
         path: "feed", // /feed
         element: <Feed />,
