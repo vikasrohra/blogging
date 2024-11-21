@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
-import Signin from "./components/Signin";
 import Feed from "./components/Feed";
 import Home from "./components/Home";
 import Main from "./components/Main";
 import Memories from "./components/Memories";
+import Onboard from "./components/Onboard";
 
 export const appRouter = createBrowserRouter([
   {
@@ -26,6 +26,6 @@ export const appRouter = createBrowserRouter([
   },
   {
     path: "/onboard",
-    element: <Signin />,
+    element: <Onboard />,
   },
 ]);

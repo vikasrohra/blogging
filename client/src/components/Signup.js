@@ -1,9 +1,11 @@
 import {
   Box,
   Button,
+  Checkbox,
   Container,
   Divider,
   FormControl,
+  FormControlLabel,
   IconButton,
   InputAdornment,
   InputLabel,
@@ -19,7 +21,7 @@ import React from "react";
 import { GoogleIcon } from "./CustomIcons";
 import AdbIcon from "@mui/icons-material/Adb";
 
-const Signin = ({ setIsSignin }) => {
+const Signup = ({ setIsSignin }) => {
   const [showPassword, setShowPassword] = React.useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
@@ -54,9 +56,17 @@ const Signin = ({ setIsSignin }) => {
             <AdbIcon />
           </Box>
           <Box sx={{ display: "flex", flexDirection: "column", my: 2 }}>
-            <Typography variant="h5">Sign in</Typography>
+            <Typography variant="h5">Sign up</Typography>
           </Box>
           <Box sx={{ width: "100%", textAlign: "center" }}>
+            <TextField
+              id="outlined-basic"
+              label="Full Name"
+              variant="outlined"
+              size="small"
+              fullWidth
+              sx={{ my: 1 }}
+            />
             <TextField
               id="outlined-basic"
               label="Email"
@@ -93,18 +103,19 @@ const Signin = ({ setIsSignin }) => {
                 label="Password"
               />
             </FormControl>
+            <Box sx={{ textAlign: "left" }}>
+              <FormControlLabel
+                control={<Checkbox />}
+                label="I want to receive updates via email."
+              />
+            </Box>
             <Button
               sx={{ width: "100%", my: 1 }}
               variant="contained"
               href="/feed"
             >
-              Sign in
+              Sign up
             </Button>
-            <Box sx={{ my: 1 }}>
-              <Typography variant="body2">
-                <Link href="#">Forgot your password?</Link>
-              </Typography>
-            </Box>
             <Divider sx={{ my: 1 }}>or</Divider>
             <Button
               sx={{ width: "100%", my: 1 }}
@@ -112,13 +123,13 @@ const Signin = ({ setIsSignin }) => {
               startIcon={<GoogleIcon />}
               href="/feed"
             >
-              Sign in with Google
+              Sign up with Google
             </Button>
             <Box sx={{ mt: 1 }}>
               <Typography variant="body2">
-                Don't have an account?{" "}
-                <Link href="#" onClick={() => setIsSignin(false)}>
-                  Sign up
+                Already have an account?{" "}
+                <Link onClick={() => setIsSignin(true)} href="#">
+                  Sign in
                 </Link>
               </Typography>
             </Box>
@@ -129,4 +140,4 @@ const Signin = ({ setIsSignin }) => {
   );
 };
 
-export default Signin;
+export default Signup;

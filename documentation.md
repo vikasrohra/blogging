@@ -110,3 +110,6 @@ root.render(<App />);
 
 
 ### Added Sign in page
+
+
+### Added Sign up page and added links to connect different pages

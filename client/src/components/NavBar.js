@@ -18,7 +18,7 @@ import InputBase from "@mui/material/InputBase";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
-import { Divider, ListItemIcon } from "@mui/material";
+import { Divider, Link, ListItemIcon } from "@mui/material";
 import Logout from "@mui/icons-material/Logout";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
 import ManageAccountsIcon from "@mui/icons-material/ManageAccounts";
@@ -241,7 +241,21 @@ const NavBar = () => {
                 <Button
                   key={page}
                   onClick={handleCloseNavMenu}
-                  sx={{ my: 2, color: "white", display: "block" }}
+                  sx={{
+                    my: 2,
+                    color: "white",
+                    display: "block",
+                    textAlign: "center",
+                  }}
+                  href={
+                    page === "Home"
+                      ? "/"
+                      : page === "Feed"
+                      ? "/feed"
+                      : page === "Memories"
+                      ? "/memories"
+                      : "/"
+                  }
                 >
                   {page}
                 </Button>
@@ -373,12 +387,14 @@ const NavBar = () => {
                   Account Settings
                 </MenuItem>
                 <Divider />
-                <MenuItem onClick={handleCloseUserMenu}>
-                  <ListItemIcon>
-                    <Logout fontSize="small" />
-                  </ListItemIcon>
-                  Logout
-                </MenuItem>
+                <Link href="/onboard" underline="none">
+                  <MenuItem onClick={handleCloseUserMenu} sx={{color: '#ffffff'}}>
+                    <ListItemIcon>
+                      <Logout fontSize="small" />
+                    </ListItemIcon>
+                    Logout
+                  </MenuItem>
+                </Link>
               </Menu>
             </Box>
           </Toolbar>
