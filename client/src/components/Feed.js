@@ -5,7 +5,7 @@ import { Avatar, Chip, Divider, Stack, Typography } from "@mui/material";
 import ForumIcon from "@mui/icons-material/Forum";
 import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 
-const Feed = () => {
+const FeedCards = () => {
   function stringToColor(string) {
     let hash = 0;
     let i;
@@ -61,7 +61,6 @@ const Feed = () => {
             p: 3,
             width: { md: "60%" },
             borderRadius: "10px",
-            mt: 3,
           }}
         >
           <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -158,7 +157,6 @@ const Feed = () => {
             display: { xs: "flex", flexDirection: "column", sm: "none" },
             p: 3,
             borderRadius: "10px",
-            mt: 3,
           }}
         >
           {/* Icon & name */}
@@ -228,6 +226,10 @@ const Feed = () => {
       </>
     );
   });
+};
+
+const Feed = () => {
+  return <FeedCards />;
 };
 
 export default Feed;

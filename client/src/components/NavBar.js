@@ -98,7 +98,7 @@ const NavBar = () => {
 
   return (
     <>
-      <AppBar position="fixed">
+      <AppBar position="sticky" sx={{ mb: 2 }}>
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <AdbIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
@@ -196,6 +196,7 @@ const NavBar = () => {
                   </ListItemIcon>
                   Home
                 </MenuItem>
+
                 <MenuItem onClick={handleCloseNavMenu}>
                   <ListItemIcon>
                     <FeedIcon fontSize="small" />
@@ -384,7 +385,7 @@ const NavBar = () => {
         </Container>
       </AppBar>
       {/* Extra toolbar is because appbar position is fixed and because of that below content will be behind the appbar, so to aviod that MUI has suggested to add an extra toolbar */}
-      <Toolbar />
+      {/* <Toolbar /> */}
 
       {/* Bottom navigation for mobile and tablet screens */}
       <AppBar
