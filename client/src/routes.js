@@ -1,9 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Feed from "./components/Feed";
 import Home from "./components/Home";
 import Main from "./components/Main";
-import Memories from "./components/Memories";
 import Onboard from "./components/Onboard";
+import { lazy, Suspense } from "react";
+
+const Feed = lazy(() => import("./components/Feed"));
+const Memories = lazy(() => import("./components/Memories"));
 
 export const appRouter = createBrowserRouter([
   {
@@ -16,11 +18,19 @@ export const appRouter = createBrowserRouter([
     children: [
       {
         path: "feed", // /feed
-        element: <Feed />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Feed />
+          </Suspense>
+        ),
       },
       {
         path: "/memories", // /memories
-        element: <Memories />,
+        element: (
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Memories />
+          </Suspense>
+        ),
       },
     ],
   },

@@ -18,6 +18,7 @@ import InputBase from "@mui/material/InputBase";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 import WbSunnyIcon from "@mui/icons-material/WbSunny";
+import DarkModeIcon from "@mui/icons-material/DarkMode";
 import { Divider, Link, ListItemIcon } from "@mui/material";
 import Logout from "@mui/icons-material/Logout";
 import BookmarksIcon from "@mui/icons-material/Bookmarks";
@@ -77,7 +78,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-const NavBar = () => {
+const NavBar = ({ setThemeMode, themeMode }) => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -95,7 +96,6 @@ const NavBar = () => {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
-
   return (
     <>
       <AppBar position="sticky" sx={{ mb: 2 }}>
@@ -279,16 +279,22 @@ const NavBar = () => {
               <EditIcon />
             </IconButton>
             <IconButton
-              aria-label="Change Theme"
+              aria-label="change theme"
               sx={{ flexGrow: 0, display: { xs: "flex", sm: "none" }, mr: 1 }}
+              onClick={() =>
+                setThemeMode(themeMode === "dark" ? "light" : "dark")
+              }
             >
-              <WbSunnyIcon />
+              {themeMode === "dark" ? <WbSunnyIcon /> : <DarkModeIcon />}
             </IconButton>
             <IconButton
-              aria-label="Change Theme"
+              aria-label="change theme"
               sx={{ flexGrow: 0, display: { xs: "none", sm: "flex" } }}
+              onClick={() =>
+                setThemeMode(themeMode === "dark" ? "light" : "dark")
+              }
             >
-              <WbSunnyIcon />
+              {themeMode === "dark" ? <WbSunnyIcon /> : <DarkModeIcon />}
             </IconButton>
             <IconButton
               aria-label="notification"
@@ -388,7 +394,10 @@ const NavBar = () => {
                 </MenuItem>
                 <Divider />
                 <Link href="/onboard" underline="none">
-                  <MenuItem onClick={handleCloseUserMenu} sx={{color: '#ffffff'}}>
+                  <MenuItem
+                    onClick={handleCloseUserMenu}
+                    sx={{ color: "#ffffff" }}
+                  >
                     <ListItemIcon>
                       <Logout fontSize="small" />
                     </ListItemIcon>
@@ -428,8 +437,12 @@ const NavBar = () => {
             <IconButton>
               <NotificationsOutlinedIcon />
             </IconButton>
-            <IconButton>
-              <WbSunnyIcon />
+            <IconButton
+              onClick={() =>
+                setThemeMode(themeMode === "dark" ? "light" : "dark")
+              }
+            >
+              {themeMode === "dark" ? <WbSunnyIcon /> : <DarkModeIcon />}
             </IconButton>
           </Box>
         </Toolbar>

@@ -3,22 +3,35 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import NavBar from "./components/NavBar";
 import { appRouter } from "./routes";
 import { RouterProvider } from "react-router-dom";
-
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
-    primary: {
-      main: "#1976d2",
-    },
-  },
-});
+import { Box, CssBaseline } from "@mui/material";
+import { useEffect, useMemo, useState } from "react";
 
 const App = () => {
+  const [themeMode, setThemeMode] = useState(
+    localStorage.getItem("themeMode") || "dark"
+  );
+
+  useEffect(() => {
+    localStorage.setItem("themeMode", themeMode);
+  }, [themeMode]);
+
+  const appTheme = useMemo(
+    () =>
+      createTheme({
+        palette: {
+          mode: themeMode,
+        },
+      }),
+    [themeMode]
+  );
+
   return (
-    <ThemeProvider theme={darkTheme}>
-      <NavBar />
-      <RouterProvider router={appRouter}>        
-      </RouterProvider>
+    <ThemeProvider theme={appTheme}>
+      <CssBaseline />
+      <Box>
+        <NavBar setThemeMode={setThemeMode} themeMode={themeMode} />
+        <RouterProvider router={appRouter} />
+      </Box>
     </ThemeProvider>
   );
 };

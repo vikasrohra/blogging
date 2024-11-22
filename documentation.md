@@ -113,3 +113,6 @@ root.render(<App />);
 
 
 ### Added Sign up page and added links to connect different pages
+
+
+### Added dark/light theme switch functionality and added lazy loading
