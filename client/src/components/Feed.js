@@ -6,6 +6,9 @@ import BookmarkBorderIcon from "@mui/icons-material/BookmarkBorder";
 import InfiniteScroll from "react-infinite-scroll-component";
 import { useState } from "react";
 import FeedCardSkeleton from "./FeedCardSkeleton";
+import AutoFixHighIcon from "@mui/icons-material/AutoFixHigh";
+import StarsIcon from '@mui/icons-material/Stars';
+import GroupIcon from '@mui/icons-material/Group';
 
 const FeedCards = () => {
   const [recordsLength, setRecordsLength] = useState(Array.from({ length: 5 }));
@@ -68,6 +71,30 @@ const FeedCards = () => {
       hasMore={true}
       loader={<FeedCardSkeleton />}
     >
+      {/* Filters */}
+      <Box sx={{ mb: 2, display: "flex" }}>
+        <Chip
+          icon={<AutoFixHighIcon sx={{ fontSize: "large" }} />}
+          label="Personalized"
+          variant="filled"
+          clickable
+          sx={{ py: 2, px: 1 }}
+        />
+        <Chip
+          icon={<GroupIcon sx={{ fontSize: "large" }} />}
+          label="Following"
+          variant="outlined"
+          clickable
+          sx={{ py: 2, px: 1, ml: 2 }}
+        />
+        <Chip
+          icon={<StarsIcon sx={{ fontSize: "large" }} />}
+          label="Featured"
+          variant="outlined"
+          clickable
+          sx={{ py: 2, px: 1, ml: 2 }}
+        />
+      </Box>
       {recordsLength.map((feed, index) => {
         return (
           <>
@@ -80,7 +107,7 @@ const FeedCards = () => {
                 p: 3,
                 width: { md: "60%" },
                 borderRadius: "10px",
-                mb: 2
+                mb: 2,
               }}
             >
               <Box sx={{ display: "flex", flexDirection: "column" }}>
@@ -151,7 +178,7 @@ const FeedCards = () => {
                     direction="row"
                     divider={<Divider orientation="vertical" flexItem />}
                     spacing={1}
-                    sx={{alignItems: "center" }}
+                    sx={{ alignItems: "center" }}
                   >
                     <Box>
                       <Chip
@@ -177,7 +204,7 @@ const FeedCards = () => {
                 display: { xs: "flex", flexDirection: "column", sm: "none" },
                 p: 3,
                 borderRadius: "10px",
-                mb: 2
+                mb: 2,
               }}
             >
               {/* Icon & name */}
