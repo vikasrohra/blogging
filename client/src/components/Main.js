@@ -7,7 +7,7 @@ const Main = () => {
   return (
     <Container maxWidth="lg">
       <Box sx={{ display: "flex" }}>
-        <Box>
+        <Box sx={{ width: 1 }}>
           <Outlet />
         </Box>
         <Box sx={{ display: { xs: "none", md: "flex" } }}>

@@ -3,6 +3,7 @@ import Home from "./components/Home";
 import Main from "./components/Main";
 import Onboard from "./components/Onboard";
 import { lazy, Suspense } from "react";
+import FeedCardSkeleton from "./components/FeedCardSkeleton";
 
 const Feed = lazy(() => import("./components/Feed"));
 const Memories = lazy(() => import("./components/Memories"));
@@ -19,7 +20,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "feed", // /feed
         element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
+          <Suspense fallback={<FeedCardSkeleton />}>
             <Feed />
           </Suspense>
         ),

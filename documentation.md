@@ -116,3 +116,6 @@ root.render(<App />);
 
 
 ### Added dark/light theme switch functionality and added lazy loading
+
+
+### Infinite scroll using library [npm install --save react-infinite-scroll-component]
