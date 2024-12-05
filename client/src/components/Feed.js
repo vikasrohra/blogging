@@ -72,7 +72,7 @@ const FeedCards = () => {
       loader={<FeedCardSkeleton />}
     >
       {/* Filters */}
-      <Box sx={{ mb: 2, display: "flex" }}>
+      <Box sx={{ mb: 2, display: "flex", overflowY: 'auto' }}>
         <Chip
           icon={<AutoFixHighIcon sx={{ fontSize: "large" }} />}
           label="Personalized"
@@ -105,7 +105,6 @@ const FeedCards = () => {
                 display: { xs: "none", sm: "flex" },
                 alignItems: "center",
                 p: 3,
-                width: { md: "60%" },
                 borderRadius: "10px",
                 mb: 2,
               }}

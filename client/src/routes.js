@@ -20,7 +20,7 @@ export const appRouter = createBrowserRouter([
       {
         path: "feed", // /feed
         element: (
-          <Suspense fallback={<FeedCardSkeleton />}>
+          <Suspense fallback={<FeedCardSkeleton showFilters={true} />}>
             <Feed />
           </Suspense>
         ),

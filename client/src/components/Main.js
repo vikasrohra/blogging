@@ -6,11 +6,11 @@ import Sidebar from "./Sidebar";
 const Main = () => {
   return (
     <Container maxWidth="lg">
-      <Box sx={{ display: "flex" }}>
-        <Box sx={{ width: 1 }}>
+      <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+        <Box sx={{ width: { xs: "100%", md: "65%" } }}>
           <Outlet />
         </Box>
-        <Box sx={{ display: { xs: "none", md: "flex" } }}>
+        <Box sx={{ display: { xs: "none", md: "flex" }, width: { md: "30%" } }}>
           <Sidebar />
         </Box>
       </Box>
