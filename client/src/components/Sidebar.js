@@ -244,30 +244,30 @@ const Sidebar = () => {
             </Box>
           </Box>
         </Box>
-        <Box sx={{ mt: 3, mb: 1 }}>
+        <Box sx={{ mt: 3, mb: 2 }}>
           <Typography variant="subtitle" sx={{ fontWeight: "bold" }}>
             Connect with us
           </Typography>
           <Box sx={{ display: "flex", mt: 1 }}>
-            <IconButton>
+            <Avatar sx={{ cursor: "pointer" }}>
               <LinkedInIcon />
-            </IconButton>
-            <IconButton sx={{ml: 2}}>
+            </Avatar>
+            <Avatar sx={{ ml: 2, cursor: "pointer" }}>
               <InstagramIcon />
-            </IconButton>
-            <IconButton sx={{ml: 2}}>
+            </Avatar>
+            <Avatar sx={{ ml: 2, cursor: "pointer" }}>
               <XIcon />
-            </IconButton>
-            <IconButton sx={{ml: 2}}>
+            </Avatar>
+            <Avatar sx={{ ml: 2, cursor: "pointer" }}>
               <YouTubeIcon />
-            </IconButton>
-            <IconButton sx={{ml: 2}}>
+            </Avatar>
+            <Avatar sx={{ ml: 2, cursor: "pointer" }}>
               <RedditIcon />
-            </IconButton>
+            </Avatar>
           </Box>
         </Box>
         <Divider />
-        <Box sx={{ mt: 1 }}>
+        <Box sx={{ mt: 2 }}>
           <Typography variant="body2" sx={{ color: "#aaa" }}>
             <Link
               href="#"

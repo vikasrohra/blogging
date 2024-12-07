@@ -1,17 +1,22 @@
 import { createBrowserRouter } from "react-router-dom";
-import Home from "./components/Home";
 import Main from "./components/Main";
 import Onboard from "./components/Onboard";
 import { lazy, Suspense } from "react";
 import FeedCardSkeleton from "./components/FeedCardSkeleton";
 
+const Home = lazy(() => import("./components/Home"));
 const Feed = lazy(() => import("./components/Feed"));
 const Memories = lazy(() => import("./components/Memories"));
+const Profile = lazy(() => import("./components/Profile"));
 
 export const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Home />
+      </Suspense>
+    ),
   },
   {
     path: "/",
@@ -25,18 +30,26 @@ export const appRouter = createBrowserRouter([
           </Suspense>
         ),
       },
-      {
-        path: "/memories", // /memories
-        element: (
-          <Suspense fallback={<h1>Loading...</h1>}>
-            <Memories />
-          </Suspense>
-        ),
-      },
     ],
+  },
+  {
+    path: "/memories", // /memories
+    element: (
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Memories />
+      </Suspense>
+    ),
   },
   {
     path: "/onboard",
     element: <Onboard />,
+  },
+  {
+    path: "/profile",
+    element: (
+      <Suspense fallback={<h1>Loading...</h1>}>
+        <Profile />
+      </Suspense>
+    ),
   },
 ]);

@@ -126,89 +126,61 @@ const SignedInHome = () => {
             </Typography>
           </Box>
         </AccordionSummary>
-        <Divider />
         <AccordionDetails>
-          <Box sx={{ display: "flex", flexDirection: {xs: 'column', md: 'row'} }}>
+          {/* <Box
+            sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
+          > */}
+          <Stack
+            spacing={2}
+            direction={{ xs: "column", md: "row" }}
+            useFlexGap
+            sx={{ flexWrap: "wrap" }}
+          >
             {[1, 2, 3].map((blog, index) => {
               return (
                 <Card
                   key={index}
+                  variant="outlined"
                   sx={{
                     display: { xs: "flex", flexDirection: "column" },
-                    p: 3,
+                    p: 2,
                     borderRadius: "10px",
-                    width: { md: "50%" },
                   }}
                 >
-                  {/* Icon & name */}
-                  <Box sx={{ display: "flex", alignItems: "center" }}>
-                    <Avatar {...stringAvatar("Vikas Rohra")} />
-                    <Box sx={{ display: "flex", flexDirection: "column" }}>
-                      <Typography variant="subtitle2" sx={{ ml: 1 }}>
-                        Vikas Rohra
-                      </Typography>
-                      <Typography variant="body2" sx={{ ml: 1, color: "#aaa" }}>
-                        blog.vikas.dev {bull} Nov 13, 2024
-                      </Typography>
-                    </Box>
+                  <Box sx={{ display: "flex", flexDirection: "column" }}>
+                    <Typography variant="h6">
+                      Introduction to Node.js
+                    </Typography>
+                    <Typography variant="body2" sx={{ color: "#aaa" }}>
+                      What is Node.js? Node.js is a JavaScript runtime that
+                      allows...
+                    </Typography>
                   </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexDirection: { xs: "column", sm: "none" },
-                      mt: 1,
-                    }}
+                  {/* Discuss, likes and reads */}
+                  <Stack
+                    direction="row"
+                    divider={bull}
+                    spacing={1}
+                    sx={{ mt: 2, display: { xs: "none", sm: "flex" } }}
                   >
-                    {/* Blog title & description */}
-                    <Box sx={{ display: "flex", flexDirection: "column" }}>
-                      <Box>
-                        <Typography variant="h6">
-                          Introduction to Node.js
-                        </Typography>
-                      </Box>
+                    <Box sx={{ display: "flex", alignItems: "center" }}>
+                      <ForumIcon sx={{ fontSize: "small" }} />
+                      <Typography variant="body2" sx={{ ml: 1 }}>
+                        Discuss
+                      </Typography>
                     </Box>
-                    {/* Blog image */}
-                    <Box sx={{ mt: 1 }}>
-                      <img
-                        src={`https://cdn.hashnode.com/res/hashnode/image/upload/v1731435640892/39346b4a-c6c5-472e-b1b9-cc4a5871fc5c.jpeg`}
-                        alt={"Blog"}
-                        style={{ width: "100%" }}
-                        loading="lazy"
-                      />
-                    </Box>
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
-                      mt: 1,
-                    }}
-                  >
-                    {/* Discuss, likes and reads */}
-                    <Stack direction="row" divider={bull} spacing={1}>
-                      <Box sx={{ display: "flex", alignItems: "center" }}>
-                        <ForumIcon sx={{ fontSize: "small" }} />
-                        <Typography variant="body2" sx={{ ml: 1 }}>
-                          Discuss
-                        </Typography>
-                      </Box>
-                      <Box>
-                        <Typography variant="body2">10 likes</Typography>
-                      </Box>
-                      <Box>
-                        <Typography variant="body2">27 reads</Typography>
-                      </Box>
-                    </Stack>
-                    {/* Bookmark */}
                     <Box>
-                      <BookmarkBorderIcon sx={{ fontSize: "medium" }} />
+                      <Typography variant="body2">10 likes</Typography>
                     </Box>
-                  </Box>
+                    <Box>
+                      <Typography variant="body2">27 reads</Typography>
+                    </Box>
+                  </Stack>
                 </Card>
               );
             })}
-          </Box>
+          </Stack>
+          {/* </Box> */}
         </AccordionDetails>
       </Accordion>
     </Container>
