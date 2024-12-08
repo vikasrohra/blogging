@@ -376,7 +376,7 @@ const NavBar = ({ setThemeMode, themeMode }) => {
                 transformOrigin={{ horizontal: "right", vertical: "top" }}
                 anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               >
-                <Link href="/profile" underline="none">
+                <Link href="/blogging/profile" underline="none">
                   <MenuItem onClick={handleCloseUserMenu} sx={{ color: "#ffffff" }}>
                     <Avatar /> Vikas Rohra
                   </MenuItem>
