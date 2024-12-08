@@ -119,3 +119,5 @@ root.render(<App />);
 
 
 ### Infinite scroll using library [npm install --save react-infinite-scroll-component]
+
+### Changes from browser router to hash router for react routing to work on github pages

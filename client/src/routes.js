@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import Main from "./components/Main";
 import Onboard from "./components/Onboard";
 import { lazy, Suspense } from "react";
@@ -9,7 +9,7 @@ const Feed = lazy(() => import("./components/Feed"));
 const Memories = lazy(() => import("./components/Memories"));
 const Profile = lazy(() => import("./components/Profile"));
 
-export const appRouter = createBrowserRouter([
+export const appRouter = createHashRouter([
   {
     path: "/",
     element: (
