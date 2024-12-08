@@ -2,7 +2,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 
 import NavBar from "./components/NavBar";
 import { appRouter } from "./routes";
-import { HashRouter } from "react-router-dom";
+import { RouterProvider } from "react-router-dom";
 import { Box, CssBaseline } from "@mui/material";
 import { useEffect, useMemo, useState } from "react";
 
@@ -30,7 +30,7 @@ const App = () => {
       <CssBaseline />
       <Box>
         <NavBar setThemeMode={setThemeMode} themeMode={themeMode} />
-        <HashRouter router={appRouter} />
+        <RouterProvider router={appRouter} />
       </Box>
     </ThemeProvider>
   );
