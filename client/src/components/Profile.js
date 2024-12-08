@@ -45,12 +45,22 @@ const Profile = () => {
         <Box
           sx={{ display: "flex", flexDirection: { xs: "column", sm: "row" } }}
         >
-          <Avatar
-            alt="Vikas Rohra"
-            src="https://avatars.githubusercontent.com/u/13039733?v=4"
-            sx={{ width: 150, height: 150, border: "1px solid #aaa" }}
-          />
-          <Box sx={{ ml: { xs: 0, sm: 6 }, mt: { xs: 2, sm: 0 } }}>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Avatar
+              alt="Vikas Rohra"
+              src="https://avatars.githubusercontent.com/u/13039733?v=4"
+              sx={{ width: 150, height: 150, border: "1px solid #aaa" }}
+            />
+            <Box sx={{ display: { xs: "flex", sm: "none" } }}>
+              <Avatar sx={{ cursor: "pointer" }}>
+                <ShareOutlinedIcon />
+              </Avatar>
+              <Avatar sx={{ cursor: "pointer", ml: 2 }}>
+                <EditOutlinedIcon />
+              </Avatar>
+            </Box>
+          </Box>
+          <Box sx={{ ml: { xs: 0, sm: 6 }, mt: { xs: 2, sm: 0 }, flex: 1 }}>
             <Typography variant="h4" sx={{ fontWeight: "bold" }}>
               Vikas Rohra
             </Typography>
@@ -58,11 +68,14 @@ const Profile = () => {
               vikasrohra {bull} he/him {bull} Senior Software Engineer
             </Typography>
             <Typography variant="h6" sx={{ color: "#aaa", mt: 2 }}>
-              Senior Software Engineer | JavaScript | React | Node.js |
-              Express.js | MongoDB | CSS Libraries
+              1561 followers {bull} 250 following
             </Typography>
           </Box>
-          <Stack direction="row-reverse" spacing={2}>
+          <Stack
+            direction={"row-reverse"}
+            spacing={2}
+            sx={{ display: { xs: "none", sm: "flex" } }}
+          >
             <Avatar sx={{ cursor: "pointer" }}>
               <EditOutlinedIcon />
             </Avatar>
